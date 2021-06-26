@@ -213,7 +213,7 @@ public class Story {
     }
     
     public void startRoom(){
-        ui.mainTextArea.setText("You wake up, tied to a chair.\nYou can’t remember what happened in the\npast 24 hours.\n\nYou can’t recognize from your \nsurroundings where you are.");
+        ui.mainTextArea.setText("You wake up, tied to a chair.\nYou can’t remember what happened in the past 24 hours.\n\nYou can’t recognize from your surroundings where you are.");
 
         ui.choice1.setText("CONTINUE");
         ui.choice2.setText("");
@@ -230,7 +230,7 @@ public class Story {
 
         if(player.currentItem.name != "Rope")
         {
-            ui.mainTextArea.setText("In FRONT of you is a mirror. You can see yourself in it.\nTo your RIGHT is a bare brick wall with a\nhuge metallic door\nTo your LEFT is a bare brick wall, and a\nmetallic table with very sharp edges.\nBEHIND you, there is only darkness. You can’t\nmake out what it is\n\nWhat do you do??");
+            ui.mainTextArea.setText("In FRONT of you is a mirror. You can see yourself in it.\nTo your RIGHT is a bare brick wall with a huge metallic door.\nTo your LEFT is a bare brick wall, and a metallic table with very sharp edges.\nBEHIND you, there is only darkness. You can’t make out what it is.\n\nWhat do you do??");
 
             ui.choice1.setText("Move FORWARD");
             ui.choice2.setText("Move RIGHT");
@@ -245,7 +245,7 @@ public class Story {
 
         else if (player.currentItem.name == "Rope")
         {
-            ui.mainTextArea.setText("In FRONT of you is a mirror. You can see yourself tied up in it.\nTo your RIGHT is a bare brick wall with a\nhuge metallic door\nTo your LEFT is a bare brick wall, and a\nmetallic table with very sharp edges.\nBEHIND you, there is only darkness. You can’t\nmake out what it is\n\nWhat do you do??");
+            ui.mainTextArea.setText("In FRONT of you is a mirror. You can see yourself tied up in it.\nTo your RIGHT is a bare brick wall with a huge metallic door.\nTo your LEFT is a bare brick wall, and a metallic table with very sharp edges.\nBEHIND you, there is only darkness. You can’t make out what it is.\n\nWhat do you do??");
 
             ui.choice1.setText("Move FORWARD");
             ui.choice2.setText("Move RIGHT");
@@ -278,7 +278,7 @@ public class Story {
 
         if(player.currentItem.name == "Rope" || player.currentItem.name == "None")
         {
-            ui.mainTextArea.setText("You see the door more closely.\nIt is metallic, and locked.\nYou can see a keyhole.\nYou can’t open it without a key.");
+            ui.mainTextArea.setText("You see the door more closely.\nIt is metallic, and locked.\nYou can see a keyhole.\n\nYou can’t open it without a key.");
 
             ui.choice1.setText("Move LEFT");
             ui.choice2.setText("");
@@ -310,7 +310,7 @@ public class Story {
     
         if (player.currentItem.name == "Rope")
         {
-            ui.mainTextArea.setText("You see the table.\nIt is metallic, and rusted.\nBut also, very sharp.\nYou could use it to get rid of the rope tying\nyour hand.\n\nWhat do you do?");
+            ui.mainTextArea.setText("You see the table.\nIt is metallic, and rusted.\nBut also, very sharp.\nYou could use it to get rid of the rope tying your hand.\n\nWhat do you do?");
             
             ui.choice1.setText("MOVE RIGHT");
             ui.choice2.setText("CUT ROPE");
@@ -327,7 +327,7 @@ public class Story {
         {
             if(player.currentWeapon.name != "Knife")
             {
-                ui.mainTextArea.setText("You see a rod jutting out of the table.\nYou could break it and use it\nas a Knife.\n\nWhat do you do?");
+                ui.mainTextArea.setText("You see a rod jutting out of the table.\nYou could break it and use it as a Knife.\n\nWhat do you do?");
                 ui.choice1.setText("MOVE RIGHT");
                 ui.choice2.setText("TAKE WEAPON");
                 ui.choice3.setText("");
@@ -341,7 +341,7 @@ public class Story {
 
             else if(player.currentWeapon.name == "Knife")
             {
-                ui.mainTextArea.setText("You have already taken the Weapon\nThere is nothing left here.");
+                ui.mainTextArea.setText("You have already taken the Weapon.\nThere is nothing left here.");
                 ui.choice1.setText("MOVE RIGHT");
                 ui.choice2.setText("");
                 ui.choice3.setText("");
@@ -388,7 +388,7 @@ public class Story {
     public void onlyDarkness(){
         if(player.currentItem.name != "Rope")
         {
-            ui.mainTextArea.setText("There is only darkness around you.\nYou feel the wall.\nIt's mostly brick.\nHowever, there is a tiny piece\nthat feels like metal.\nYou try to pull it.\nIt's a Key!!\n\n What do you do??");
+            ui.mainTextArea.setText("There is only darkness around you.\nYou feel the wall.\nIt's mostly brick.\nHowever, there is a tiny piece that feels like metal.\nYou try to pull it.\nIt's a Key!!\n\n What do you do??");
             ui.choice1.setText("MOVE BACKWARD");
             ui.choice2.setText("TAKE KEY");
             ui.choice3.setText("");
@@ -402,7 +402,7 @@ public class Story {
         
         if(player.currentItem.name == "Rope")
         {
-            ui.mainTextArea.setText("There is only darkness around you.\nYou can't feel the wall, as your\nhands are tied.");
+            ui.mainTextArea.setText("There is only darkness around you.\nYou can't feel the wall, as your hands are tied.");
             ui.itemLabelName.setText(player.currentItem.name);
             ui.choice1.setText("MOVE BACKWARD");
             ui.choice2.setText("");
@@ -436,7 +436,7 @@ public class Story {
         else if(player.currentItem.name == "Key")
         {
             player.currentItem = new ItemKey();
-            ui.mainTextArea.setText("There is just a dark, bare\nwall here. Nothing else remains.\n");
+            ui.mainTextArea.setText("There is just a dark, bare wall here.\nNothing else remains.\n");
             ui.itemLabelName.setText(player.currentItem.name);
             ui.choice1.setText("MOVE BACKWARD");
             ui.choice2.setText("");
