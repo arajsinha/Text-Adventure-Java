@@ -18,9 +18,9 @@ public class UI {
 
     JFrame window;
     JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel;
-    JLabel titleNameLabel, hpLabel, hpLabelNumber, weaponLabel, weaponLabelName;
+    JLabel titleNameLabel, hpLabel, hpLabelNumber, weaponLabel, weaponLabelName, itemLabel, itemLabelName;
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 20);
-    Font monument, karla, normalFont;
+    Font monument, karla, normalFont, pixel;
     JButton startButton, choice1, choice2, choice3, choice4;
     JTextArea mainTextArea;
     int playerHP;
@@ -29,16 +29,16 @@ public class UI {
     public void createUI(ChoiceHandler chHandler){
 
         try {
-            monument = Font.createFont(Font.TRUETYPE_FONT, new File("monument.ttf")).deriveFont(30f);
+            pixel = Font.createFont(Font.TRUETYPE_FONT, new File("pixel.ttf")).deriveFont(30f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("monument.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("pixel.ttf")));
         } catch (Exception e) {
             //
         }
         try {
-            normalFont = Font.createFont(Font.TRUETYPE_FONT, new File("monument.ttf")).deriveFont(18f);
+            normalFont = Font.createFont(Font.TRUETYPE_FONT, new File("pixel.ttf")).deriveFont(18f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("monument.ttf")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("pixel.ttf")));
         } catch (Exception e) {
             //
         }
@@ -65,7 +65,7 @@ public class UI {
 
         titleNameLabel = new JLabel("THE HUNT FOR AGENT X");
         titleNameLabel.setForeground(Color.white);
-        titleNameLabel.setFont(monument);
+        titleNameLabel.setFont(pixel);
 
         startButtonPanel = new JPanel();
         startButtonPanel.setBounds(325, 400, 150, 40);
@@ -96,9 +96,11 @@ public class UI {
         mainTextArea = new JTextArea("ALL THE TEXT IS GONNA BE HERE. THIS IS GONNA BE AWESOME!!");
         mainTextArea.setBounds(100, 100, 600, 250);
         mainTextArea.setBackground(Color.black);
-        mainTextArea.setForeground(Color.white);
+        mainTextArea.setForeground(Color.green);
         mainTextArea.setFont(normalFont);
         mainTextArea.setLineWrap(true);
+        mainTextArea.setEditable(false);
+        mainTextArea.setWrapStyleWord(true);
         mainTextPanel.add(mainTextArea);
 
         choiceButtonPanel = new JPanel();
@@ -170,5 +172,15 @@ public class UI {
         weaponLabelName.setFont(karla);
         weaponLabelName.setForeground(Color.white);
         playerPanel.add(weaponLabelName);
+
+        itemLabel = new JLabel("Item: ");
+        itemLabel.setFont(karla);
+        itemLabel.setForeground(Color.white);
+        playerPanel.add(itemLabel);
+
+        itemLabelName = new JLabel();
+        itemLabelName.setFont(karla);
+        itemLabelName.setForeground(Color.white);
+        playerPanel.add(itemLabelName);
     }
 }
